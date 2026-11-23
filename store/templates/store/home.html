@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ShopEasy</title>
     <style>
         body {
@@ -39,6 +40,25 @@
             padding: 10px 15px;
             text-decoration: none;
             border-radius: 6px;
+            @media (max-width: 600px) {
+    .products {
+        grid-template-columns: 1fr;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    header {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+}
         }
     </style>
 </head>
