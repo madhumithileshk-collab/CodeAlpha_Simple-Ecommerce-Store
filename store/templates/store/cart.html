@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping Cart</title>
+    <style>
+        body { font-family: Arial; background: #f4f4f9; padding: 30px; }
+        h1 { text-align: center; color: #25245b; }
+        .item { background: white; padding: 20px; margin: 15px auto; max-width: 500px; border-radius: 10px; }
+        a { background: #5146c8; color: white; padding: 10px 15px; text-decoration: none; border-radius: 6px; }
+        .actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    margin: 30px auto;
+}
+
+.actions a {
+    display: inline-block;
+    text-align: center;
+    min-width: 150px;
+}
+    </style>
+</head>
+<body>
+    <h1>🛒 Shopping Cart</h1>
+
+    {% for item in cart_items %}
+    <div class="item">
+        <h2>{{ item.product.name }}</h2>
+        <p>Quantity: {{ item.quantity }}</p>
+        <p>Price: ₹{{ item.subtotal }}</p>
+    </div>
+    {% empty %}
+    <p style="text-align:center;">Your cart is empty.</p>
+    {% endfor %}
+
+    <h2 style="text-align:center;">Total: ₹{{ total }}</h2>
+   <div class="actions">
+    <a href="/checkout/">Proceed to Checkout</a>
+    <a href="/">Continue Shopping</a>
+</div>
+</body>
+</html>

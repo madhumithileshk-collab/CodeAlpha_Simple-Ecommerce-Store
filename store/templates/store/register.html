@@ -1,0 +1,17 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register - ShopEasy</title>
+</head>
+<body style="font-family:Arial;text-align:center;background:#f4f4f9;padding:40px;">
+    <h1>Create Account</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Register</button>
+    </form>
+    <p>Already have an account? <a href="/login/">Login</a></p>
+    <a href="/">Back to Home</a>
+</body>
+</html>

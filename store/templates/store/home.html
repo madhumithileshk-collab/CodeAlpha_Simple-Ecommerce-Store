@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ShopEasy</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f9;
+            margin: 0;
+        }
+        header {
+            background: #25245b;
+            color: white;
+            padding: 22px;
+            text-align: center;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            padding: 30px;
+        }
+        .card {
+            background: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px #ddd;
+        }
+        .price {
+            color: #5146c8;
+            font-weight: bold;
+        }
+        a {
+            display: inline-block;
+            background: #5146c8;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div style="text-align:right; padding:15px;">
+    <a href="/login/">Login</a> |
+    <a href="/register/">Register</a> |
+    <a href="/cart/">Shopping Cart 🛒</a>
+</div>
+
+<header>
+    <h1>🛍️ ShopEasy</h1>
+    <p>Welcome to our online store</p>
+</header>
+
+<h2 style="text-align:center;">Our Products</h2>
+
+<div class="products">
+    {% for product in products %}
+    <div class="card">
+        <h2>{{ product.name }}</h2>
+        <p>{{ product.description }}</p>
+        <p class="price">₹{{ product.price }}</p>
+        <p>Stock: {{ product.stock }}</p>
+        <a href="/product/{{ product.id }}/">View Details</a>
+    </div>
+    {% empty %}
+    <p>No products available.</p>
+    {% endfor %}
+</div>
+
+</body>
+</html>

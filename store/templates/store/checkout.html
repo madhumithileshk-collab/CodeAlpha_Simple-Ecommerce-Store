@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout - ShopEasy</title>
+</head>
+<body style="font-family:Arial;text-align:center;background:#f4f4f9;padding:40px;">
+    <h1>Order Checkout</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        <p><input type="text" name="customer_name" placeholder="Your Name" required></p>
+        <p><input type="email" name="customer_email" placeholder="Your Email" required></p>
+        <button type="submit">Place Order</button>
+    </form>
+
+    <a href="/cart/">Back to Cart</a>
+</body>
+</html>

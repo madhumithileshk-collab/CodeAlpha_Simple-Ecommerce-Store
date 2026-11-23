@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Details - ShopEasy</title>
+    <style>
+        body { font-family: Arial; background: #f4f4f9; text-align: center; padding: 40px; }
+        .card { background: white; max-width: 500px; margin: auto; padding: 30px; border-radius: 12px; box-shadow: 0 3px 12px #ddd; }
+        h1 { color: #25245b; }
+        .price { color: #5146c8; font-size: 24px; }
+        a { display: inline-block; background: #5146c8; color: white; padding: 12px 20px; text-decoration: none; border-radius: 6px; margin: 8px; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>{{ product.name }}</h1>
+        <p>{{ product.description }}</p>
+        <h2 class="price">₹{{ product.price }}</h2>
+        <p>Available Stock: {{ product.stock }}</p>
+
+        <a href="{% url 'add_to_cart' product.id %}">Add to Cart</a>
+        <a href="/">Back to Home</a>
+        <a href="/cart/">View Cart</a>
+    </div>
+</body>
+</html>
